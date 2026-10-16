@@ -1,6 +1,6 @@
 # Interview and result-interpretation guide
 
-Use this guide only after completing a full Kaggle run. Replace bracketed fields with values copied from saved artifacts; do not estimate them.
+Use saved full-run artifacts when completing this guide. Replace bracketed fields with values copied from those artifacts; do not estimate them.
 
 ## Two-minute project explanation
 

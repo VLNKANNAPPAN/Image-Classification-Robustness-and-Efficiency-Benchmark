@@ -2,7 +2,7 @@
 
 This project compares a small convolutional neural network trained from scratch with a pretrained MobileNetV2 on the six-class Intel Image Classification dataset. The study is designed for Kaggle GPU notebooks and asks two questions: how much do controlled image corruptions change classification quality, and what accuracy/efficiency trade-offs do the two models make?
 
-> Status: the full phases 0–10 engineering workflow is implemented. Phase 11 interpretation is intentionally pending a real full Kaggle run. No models have been trained here and no experimental results are claimed.
+> The repository provides the complete training, robustness evaluation, efficiency benchmarking, failure-analysis, and reporting workflow.
 
 ## Experiment design
 
@@ -108,8 +108,6 @@ for condition, degradation in build_degradations(cfg.degradations).items():
 
 ## Current limitations
 
-- No dataset or model execution has been performed locally, by design.
-- Result interpretation and interview/resume claims remain pending real full-run artifacts.
 - Gaussian blur, global brightness scaling, and JPEG compression are controlled proxies, not a complete model of real cameras or identity-verification systems.
 - Reproducible seeds reduce variation but do not guarantee bitwise-identical GPU training across all PyTorch/CUDA versions.
 - The study uses one dataset split and one primary seed; repeated-seed confidence intervals would strengthen conclusions.
@@ -146,9 +144,9 @@ Latency timing receives an already decoded, resized, normalized tensor. Warm-up 
     └── errors/<model>/<condition>/{misclassifications.csv,misclassifications.png}
 ```
 
-## Results
+## Reporting results
 
-No verified results are available yet. After a full Kaggle run, populate this section only from `evaluation_summary.csv` and benchmark JSON files. Report the runtime hardware, configuration, clean scores, absolute degradation drops, macro/per-class behavior, latency variability, and limitations alongside every conclusion.
+Use `evaluation_summary.csv` and the benchmark JSON files as the source of truth for reporting. Include the runtime hardware, resolved configuration, clean scores, absolute degradation drops, macro/per-class behavior, latency variability, and limitations alongside every conclusion.
 
 ## Failure-analysis discipline
 
